@@ -1,12 +1,45 @@
 export const seedTenants = [
-  { id: "t1", name: "Kasun Perera", room: "R1", phone: "0771234567", rent: 15000, status: "Paid" },
-  { id: "t2", name: "Nimal Silva",  room: "R2", phone: "0712345678", rent: 12000, status: "Pending" },
-  // තව 8–10ක් දාන්න
+  { id: "t1", name: "Kasun Perera", room: "R1", phone: "0771234567", rent: 15000 },
+  { id: "t2", name: "Nimal Silva", room: "R2", phone: "0712345678", rent: 12000 },
+  { id: "t3", name: "Sanduni Fernando", room: "R3", phone: "0765551234", rent: 14000 },
+  { id: "t4", name: "Tharindu Jayasinghe", room: "R4", phone: "0701239876", rent: 13000 },
+  { id: "t5", name: "Ishara Wijesinghe", room: "R5", phone: "0779876543", rent: 12500 },
+  { id: "t6", name: "Dilshan Rathnayake", room: "R6", phone: "0718765432", rent: 15000 },
+  { id: "t7", name: "Nadeesha Kumari", room: "R7", phone: "0752223344", rent: 11000 },
+  { id: "t8", name: "Chamara Bandara", room: "R8", phone: "0786667788", rent: 13500 },
+  { id: "t9", name: "Heshan Gunawardena", room: "R9", phone: "0724445566", rent: 12000 },
+  { id: "t10", name: "Amali Dissanayake", room: "R10", phone: "0769990011", rent: 14500 },
 ];
 
 export const seedPayments = [
-  { id: "p1", tenantId: "t1", type: "Rent",        amount: 15000, month: "2026-10", date: "2026-10-03" },
-  { id: "p2", tenantId: "t1", type: "Electricity", amount: 2300,  month: "2026-10", date: "2026-10-05" },
-  { id: "p3", tenantId: "t2", type: "Water",       amount: 800,   month: "2026-10", date: "2026-10-06" },
-  // තව 20ක් විතර දාන්න
+  // October 2026 rent
+  { id: "p1", tenantId: "t1", type: "Rent", amount: 15000, month: "2026-10", date: "2026-10-02" },
+  { id: "p2", tenantId: "t2", type: "Rent", amount: 12000, month: "2026-10", date: "2026-10-04" },
+  { id: "p3", tenantId: "t3", type: "Rent", amount: 14000, month: "2026-10", date: "2026-10-03" },
+  { id: "p4", tenantId: "t4", type: "Rent", amount: 13000, month: "2026-10", date: "2026-10-05" },
+  { id: "p5", tenantId: "t5", type: "Rent", amount: 12500, month: "2026-10", date: "2026-10-06" },
+  { id: "p6", tenantId: "t6", type: "Rent", amount: 15000, month: "2026-10", date: "2026-10-02" },
+  { id: "p7", tenantId: "t7", type: "Rent", amount: 11000, month: "2026-10", date: "2026-10-07" },
+  { id: "p8", tenantId: "t8", type: "Rent", amount: 13500, month: "2026-10", date: "2026-10-03" },
+  { id: "p9", tenantId: "t9", type: "Rent", amount: 12000, month: "2026-10", date: "2026-10-08" },
+  { id: "p10", tenantId: "t10", type: "Rent", amount: 14500, month: "2026-10", date: "2026-10-05" },
+  // October utilities
+  { id: "p11", tenantId: "t1", type: "Electricity", amount: 2300, month: "2026-10", date: "2026-10-09" },
+  { id: "p12", tenantId: "t2", type: "Electricity", amount: 1850, month: "2026-10", date: "2026-10-09" },
+  { id: "p13", tenantId: "t3", type: "Electricity", amount: 2100, month: "2026-10", date: "2026-10-10" },
+  { id: "p14", tenantId: "t5", type: "Electricity", amount: 1700, month: "2026-10", date: "2026-10-10" },
+  { id: "p15", tenantId: "t2", type: "Water", amount: 800, month: "2026-10", date: "2026-10-11" },
+  { id: "p16", tenantId: "t4", type: "Water", amount: 650, month: "2026-10", date: "2026-10-11" },
+  { id: "p17", tenantId: "t6", type: "Water", amount: 900, month: "2026-10", date: "2026-10-12" },
+  { id: "p18", tenantId: "t1", type: "Internet", amount: 1500, month: "2026-10", date: "2026-10-12" },
+  { id: "p19", tenantId: "t7", type: "Internet", amount: 1500, month: "2026-10", date: "2026-10-13" },
+  { id: "p20", tenantId: "t9", type: "Internet", amount: 1500, month: "2026-10", date: "2026-10-13" },
+  // November 2026
+  { id: "p21", tenantId: "t1", type: "Rent", amount: 15000, month: "2026-11", date: "2026-11-02" },
+  { id: "p22", tenantId: "t3", type: "Rent", amount: 14000, month: "2026-11", date: "2026-11-03" },
+  { id: "p23", tenantId: "t4", type: "Rent", amount: 13000, month: "2026-11", date: "2026-11-04" },
+  { id: "p24", tenantId: "t6", type: "Rent", amount: 15000, month: "2026-11", date: "2026-11-02" },
+  { id: "p25", tenantId: "t8", type: "Rent", amount: 13500, month: "2026-11", date: "2026-11-05" },
+  { id: "p26", tenantId: "t1", type: "Electricity", amount: 2450, month: "2026-11", date: "2026-11-08" },
+  { id: "p27", tenantId: "t3", type: "Internet", amount: 1500, month: "2026-11", date: "2026-11-09" },
 ];
