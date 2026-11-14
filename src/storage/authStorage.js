@@ -45,3 +45,19 @@ export async function getSessionUser() {
 export async function logout() {
   await AsyncStorage.removeItem(SESSION_KEY);
 }
+
+export async function updateUser(id, { name, email, password }) {
+  const users = await getUsers();
+  const mail = email.trim().toLowerCase();
+
+  if (users.some((u) => u.email === mail && u.id !== id))
+    return { ok: false, message: "This email is used by another account." };
+
+  const updated = users.map((u) =>
+    u.id === id
+      ? { ...u, name: name.trim(), email: mail, ...(password ? { password } : {}) }
+      : u
+  );
+  await AsyncStorage.setItem(USERS_KEY, JSON.stringify(updated));
+  return { ok: true, user: updated.find((u) => u.id === id) };
+}
