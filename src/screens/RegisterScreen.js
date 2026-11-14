@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ScrollView, Text, TextInput, TouchableOpacity, Alert, StyleSheet } from "react-native";
-import { registerUser } from "../storage/authStorage";
+import { registerUser, setSession } from "../storage/authStorage";
 import { colors } from "../theme";
 
 export default function RegisterScreen({ navigation }) {
@@ -21,6 +21,8 @@ export default function RegisterScreen({ navigation }) {
 
     const result = await registerUser({ name, email, password });
     if (!result.ok) return Alert.alert("Registration failed", result.message);
+
+    await setSession(result.user.id);
 
     Alert.alert("Success", "Account created!", [
       { text: "OK", onPress: () => navigation.replace("Main") },
@@ -53,6 +55,12 @@ export default function RegisterScreen({ navigation }) {
 
       <TouchableOpacity style={s.btn} onPress={onRegister}>
         <Text style={s.btnText}>Register</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity onPress={() => navigation.navigate("Login")}>
+        <Text style={{ textAlign: "center", color: colors.primary, marginTop: 18, fontWeight: "bold" }}>
+          Already have an account? Login
+        </Text>
       </TouchableOpacity>
     </ScrollView>
   );
