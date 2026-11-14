@@ -1,3 +1,8 @@
+import { useEffect, useState } from "react";
+import { ActivityIndicator, View } from "react-native";
+import LoginScreen from "../screens/LoginScreen";
+import RegisterScreen from "../screens/RegisterScreen";
+import { getSessionUser } from "../storage/authStorage";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -33,11 +38,28 @@ function Tabs() {
 }
 
 export default function AppNavigator() {
+  const [initial, setInitial] = useState(null);
+
+  // Already logged in? Skip the login screen
+  useEffect(() => {
+    getSessionUser().then((u) => setInitial(u ? "Main" : "Login"));
+  }, []);
+
+  if (!initial)
+    return (
+      <View style={{ flex: 1, justifyContent: "center" }}>
+        <ActivityIndicator size="large" color={colors.primary} />
+      </View>
+    );
+
   return (
     <NavigationContainer>
       <Stack.Navigator
+        initialRouteName={initial}
         screenOptions={{ headerStyle: { backgroundColor: colors.primary }, headerTintColor: "#fff" }}
       >
+        <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="Register" component={RegisterScreen} options={{ headerShown: false }} />
         <Stack.Screen name="Main" component={Tabs} options={{ headerShown: false }} />
         <Stack.Screen name="TenantDetail" component={TenantDetailScreen} options={{ title: "Tenant Details" }} />
         <Stack.Screen name="AddTenant" component={AddTenantScreen} options={{ title: "Add Tenant" }} />
