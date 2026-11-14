@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { ActivityIndicator, View } from "react-native";
 import LoginScreen from "../screens/LoginScreen";
 import RegisterScreen from "../screens/RegisterScreen";
+import ProfileScreen from "../screens/ProfileScreen";
+
 import { getSessionUser } from "../storage/authStorage";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -18,8 +20,7 @@ import { colors } from "../theme";
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
-const icons = { Dashboard: "home", Tenants: "people", Payments: "cash" };
-
+const icons = { Dashboard: "home", Tenants: "people", Payments: "cash", Profile: "person" };
 function Tabs() {
   return (
     <Tab.Navigator
@@ -33,6 +34,7 @@ function Tabs() {
       <Tab.Screen name="Dashboard" component={DashboardScreen} options={{ title: "NestPay" }} />
       <Tab.Screen name="Tenants" component={TenantsScreen} />
       <Tab.Screen name="Payments" component={PaymentsScreen} />
+      <Tab.Screen name="Profile" component={ProfileScreen} />
     </Tab.Navigator>
   );
 }
@@ -40,7 +42,6 @@ function Tabs() {
 export default function AppNavigator() {
   const [initial, setInitial] = useState(null);
 
-  // Already logged in? Skip the login screen
   useEffect(() => {
     getSessionUser().then((u) => setInitial(u ? "Main" : "Login"));
   }, []);
