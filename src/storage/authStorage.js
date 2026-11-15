@@ -61,3 +61,4 @@ export async function updateUser(id, { name, email, password }) {
   await AsyncStorage.setItem(USERS_KEY, JSON.stringify(updated));
   return { ok: true, user: updated.find((u) => u.id === id) };
 }
+
