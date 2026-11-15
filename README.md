@@ -22,10 +22,9 @@ who is pending, and how much has been collected each month.
 - Fully offline
 
 ## 📱 Screenshots
-## 📱 Screenshots
 | Login | Register | Dashboard |
 |---|---|---|
-| ![Login](screenshots/Login.png) | ![Register](screenshots/Register.png) | ![Dashboard](screenshots/Dashboard.png) |
+| ![Login](screenshots/Login.png) | ![Register](screenshots/Register.jpeg) | ![Dashboard](screenshots/Dashboard.png) |
 
 | Tenants | Tenant Details | Add Tenant |
 |---|---|---|
