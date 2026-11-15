@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react";
-import { ScrollView, View, Text, TextInput, TouchableOpacity, Alert, StyleSheet } from "react-native";
-import { useFocusEffect } from "@react-navigation/native";
+import { ScrollView, View, Text, TextInput, TouchableOpacity, Alert, Platform, StyleSheet } from "react-native";
+import { useFocusEffect, CommonActions } from "@react-navigation/native";
 import { getSessionUser, updateUser, logout } from "../storage/authStorage";
 import { getTenants, getPayments } from "../storage/storage";
 import { colors } from "../theme";
@@ -42,18 +42,23 @@ export default function ProfileScreen({ navigation }) {
     Alert.alert("Saved", "Profile updated.");
   };
 
-  const onLogout = () =>
-    Alert.alert("Logout", "Do you want to log out?", [
-      { text: "Cancel", style: "cancel" },
-      {
-        text: "Logout",
-        style: "destructive",
-        onPress: async () => {
-          await logout();
-          navigation.getParent().reset({ index: 0, routes: [{ name: "Login" }] });
-        },
-      },
-    ]);
+ const doLogout = async () => {
+  await logout();
+  navigation.dispatch(
+    CommonActions.reset({ index: 0, routes: [{ name: "Login" }] })
+  );
+};
+
+const onLogout = () => {
+  if (Platform.OS === "web") {
+    if (window.confirm("Do you want to log out?")) doLogout();
+    return;
+  }
+  Alert.alert("Logout", "Do you want to log out?", [
+    { text: "Cancel", style: "cancel" },
+    { text: "Logout", style: "destructive", onPress: doLogout },
+  ]);
+};
 
   if (!user) return <View style={s.container}><Text style={{ padding: 20 }}>Loading...</Text></View>;
 
