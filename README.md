@@ -22,17 +22,18 @@ who is pending, and how much has been collected each month.
 - Fully offline
 
 ## 📱 Screenshots
+## 📱 Screenshots
 | Login | Register | Dashboard |
 |---|---|---|
-| ![Login](screenshots/login.png) | ![Register](screenshots/register.png) | ![Dashboard](screenshots/dashboard.png) |
+| ![Login](screenshots/Login.png) | ![Register](screenshots/Register.png) | ![Dashboard](screenshots/Dashboard.png) |
 
 | Tenants | Tenant Details | Add Tenant |
 |---|---|---|
-| ![Tenants](screenshots/tenants.png) | ![Details](screenshots/tenant-details.png) | ![Add Tenant](screenshots/add-tenant.png) |
+| ![Tenants](screenshots/Tenant.png) | ![Details](screenshots/Tenant-details.png) | ![Add Tenant](screenshots/Add-tenant.png) |
 
 | Payments | Add Payment | Profile |
 |---|---|---|
-| ![Payments](screenshots/payments.png) | ![Add Payment](screenshots/add-payment.png) | ![Profile](screenshots/profile.png) |
+| ![Payments](screenshots/Payment.png) | ![Add Payment](screenshots/Add-payment.png) | ![Profile](screenshots/Profile.png) |
 
 ## 🛠 Technologies Used
 - React Native (Expo SDK 58)
