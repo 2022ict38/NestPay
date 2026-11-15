@@ -22,17 +22,21 @@ who is pending, and how much has been collected each month.
 - Fully offline
 
 ## 📱 Screenshots
-| Login | Register | Dashboard |
-|---|---|---|
-| ![Login](screenshots/Login.png) | ![Register](screenshots/Register.jpeg) | ![Dashboard](screenshots/Dashboard.png) |
-
-| Tenants | Tenant Details | Add Tenant |
-|---|---|---|
-| ![Tenants](screenshots/Tenant.png) | ![Details](screenshots/Tenant-details.png) | ![Add Tenant](screenshots/Add-tenant.png) |
-
-| Payments | Add Payment | Profile |
-|---|---|---|
-| ![Payments](screenshots/Payment.png) | ![Add Payment](screenshots/Add-payment.png) | ![Profile](screenshots/Profile.png) |
+<p align="center">
+  <img src="screenshots/Login.png" width="220" alt="Login">
+  <img src="screenshots/Register.jpeg" width="220" alt="Register">
+  <img src="screenshots/Dashboard.png" width="220" alt="Dashboard">
+</p>
+<p align="center">
+  <img src="screenshots/Tenant.png" width="220" alt="Tenants">
+  <img src="screenshots/Tenant-details.png" width="220" alt="Tenant Details">
+  <img src="screenshots/Add-tenant.png" width="220" alt="Add Tenant">
+</p>
+<p align="center">
+  <img src="screenshots/Payment.png" width="220" alt="Payments">
+  <img src="screenshots/Add-payment.png" width="220" alt="Add Payment">
+  <img src="screenshots/Profile.png" width="220" alt="Profile">
+</p>
 
 ## 🛠 Technologies Used
 - React Native (Expo SDK 58)
@@ -78,4 +82,6 @@ NestPay/
 - Branch-based development (`feature/register`, `feature/login`, `feature/profile`)
 
 ## 👤 Author
-<ඔයාගේ නම> – <index number>
+M.G.D.Apsara
+2022/ict/38
+IT3133 
